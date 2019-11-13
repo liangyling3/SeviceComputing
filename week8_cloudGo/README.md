@@ -20,24 +20,34 @@
 ### 静态文件服务
 assets文件夹下不存在index.html时：
 - localhost:8080/static/
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20191113194659530.png)
 
 添加index.html：
 - localhost:8080/static/
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20191113194425746.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5neWxpbmcz,size_16,color_FFFFFF,t_70)
 ### 简单 js 访问
-- localhost:8080/static/js/hello.js![在这里插入图片描述](https://img-blog.csdnimg.cn/20191113194511620.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5neWxpbmcz,size_16,color_FFFFFF,t_70)
+- localhost:8080/static/js/hello.js
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20191113194511620.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5neWxpbmcz,size_16,color_FFFFFF,t_70)
 ### 提交表单，并输出一个表格
 - localhost:8080
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20191113194214918.png)
 - localhost:8080/login
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20191113194310706.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5neWxpbmcz,size_16,color_FFFFFF,t_70)
 
 ### 对 /unknown 给出开发中的提示
 
--  localhost:8080/unknown![在这里插入图片描述](https://img-blog.csdnimg.cn/20191113194821957.png)
+-  localhost:8080/unknown
 
-- localhost:8080/sss![在这里插入图片描述](https://img-blog.csdnimg.cn/20191113194845881.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20191113194821957.png)
+
+- localhost:8080/sss
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20191113194845881.png)
 ## 注意事项
 #### 相关包的安装
 实验前需要使用 go get 命令安装相关包
