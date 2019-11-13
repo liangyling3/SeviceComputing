@@ -26,7 +26,7 @@ func getArgs(args *selpgArgs) {
 	// 参数值的绑定
 	pflag.IntVarP(&args.start_page, "start_page", "s", -1, "Start page of file")
 	pflag.IntVarP(&args.end_page, "end_page", "e", -1, "End page of file")
-	pflag.IntVarP(&args.page_length, "page_length", "l", 72, "Number of rows in one page")
+	pflag.IntVarP(&args.page_length, "page_length", "l", 20, "Number of rows in one page")
 	pflag.BoolVarP(&args.page_type, "page_type", "f", false, "Flag splits page")
 	pflag.StringVarP(&args.dest, "dest", "d", "", "name of printer")
 
@@ -57,7 +57,7 @@ func checkArgs(args *selpgArgs) {
 		os.Exit(2)
 	}
 
-	if (args.page_type == true) && (args.page_length != 72) {
+	if (args.page_type == true) && (args.page_length != 20) {
 		fmt.Fprintf(os.Stderr, "\n[Error]The command -l and -f are exclusive!\n")
 		os.Exit(3)
 	}
@@ -102,20 +102,18 @@ func handle(args *selpgArgs) {
 	if args.page_type == false {
 		for {
 			line, err := readLine.ReadString('\n')
-			if err == io.EOF 
+			if err == io.EOF {
 				break
-			
+			}
 			if err != nil {
 				fmt.Fprintf(os.Stderr, "Read file error!\n")
 				os.Exit(7)
 			}
-
 			lineCount++
 			if lineCount > args.page_length {
 				pageCount++
 				lineCount = 1
 			}
-
 			// 判断输出方式
 			if pageCount >= args.start_page && pageCount <= args.end_page {
 				fmt.Fprintf(fileout, "%s", line)
@@ -127,12 +125,10 @@ func handle(args *selpgArgs) {
 			if err == io.EOF {
 				break
 			}
-
 			if err != nil {
 				fmt.Fprintf(os.Stderr, "Read file error!\n")
 				os.Exit(7)
 			}
-
 			pageCount++
 			if pageCount >= args.start_page && pageCount <= args.end_page {
 				fmt.Fprintf(fileout, "%s", page)
@@ -158,7 +154,7 @@ func handle(args *selpgArgs) {
 }
 
 func main() {
-	args := selpgArgs{0, 0, 72, false, "", ""}
+	args := selpgArgs{0, 0, 20, false, "", ""}
 	getArgs(&args)
 	checkArgs(&args)
 	handle(&args)
